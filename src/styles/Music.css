@@ -1,0 +1,49 @@
+.music {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.videoBox {
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.videoBox:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.videoBox.selected {
+  border-color: blue;
+}
+
+.videoBox p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Estilos específicos para la última fila de 2 videos */
+.music:last-child .videoBox:nth-child(5),
+.music:last-child .videoBox:nth-child(6) {
+  width: 45%;
+}
+
+@media screen and (max-width: 768px) {
+  .videoBox {
+    width: 45%;
+  }
+
+  /* Estilos específicos para la última fila de 2 videos en pantallas más pequeñas */
+  .music:last-child .videoBox:nth-child(5),
+  .music:last-child .videoBox:nth-child(6) {
+    width: 100%;
+  }
+}
